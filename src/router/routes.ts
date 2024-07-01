@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { useHttpStore } from '../stores/HttpStore';
 import { useUserStore } from '../stores/UserStore';
-import * as process from 'process';
 
 const routes = [
     {
@@ -35,7 +34,7 @@ const router = createRouter({
     routes,
 });
 
-router.beforeEach( async (to, from, next) => {
+router.beforeEach( async (to, _from, next) => {
 	console.log(import.meta.env.VITE_API_URL);
     if(to.meta.AuthRequired) {
         if(localStorage.getItem('access_token') && localStorage.getItem('access_token') != "") {

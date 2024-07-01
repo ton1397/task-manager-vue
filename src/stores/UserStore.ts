@@ -6,11 +6,11 @@ export const useUserStore = defineStore('user', {
         email: ''
     }),
     actions: {
-        setNome(nome) {
+        setNome(nome: string) {
             this.nome = nome
         },
 
-        setEmail(email) {
+        setEmail(email: string) {
             this.email = email
         }
     }
